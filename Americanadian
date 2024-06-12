@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        ArrayList<String> x = new ArrayList<>();
+        for(int i=0;i<1000;i++){
+            x.add(inp.readLine());
+            if(x.get(i).equals("quit!")){
+                break;
+            }else if((x.get(i).length()>4) && (x.get(i).charAt(x.get(i).length()-3)!='a')&&
+                    (x.get(i).charAt(x.get(i).length()-3)!='e') && (x.get(i).charAt(x.get(i).length()-3)!='i')&& (
+                            x.get(i).charAt(x.get(i).length()-3)!='o')&&
+                    (x.get(i).charAt(x.get(i).length()-3)!='u') && (x.get(i).substring(x.get(i).length()-2).equals("or"))){
+                System.out.println(x.get(i).substring(0, x.get(i).length()-2) + "our");
+            } else {
+                System.out.println(x.get(i));
+            }
+        }
+    }
+}
