@@ -1,0 +1,24 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int A  = Integer.parseInt(reader.readLine());
+        int B  = Integer.parseInt(reader.readLine());
+        int C  = Integer.parseInt(reader.readLine());
+        int D  = Integer.parseInt(reader.readLine());
+        int E  = Integer.parseInt(reader.readLine());
+        int F  = Integer.parseInt(reader.readLine());
+        int Apple = A*3 + B*2 +C;
+        int Orange = D*3 + E*2 +F;
+        if(Apple>Orange){
+            System.out.println("A");
+        } else if(Orange>Apple){
+            System.out.println("B");
+        } else{
+            System.out.println("T");
+        }
+    }
+}
