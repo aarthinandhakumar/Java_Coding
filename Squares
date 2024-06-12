@@ -1,0 +1,13 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int N  = Integer.parseInt(reader.readLine());
+        int x = (int)(Math.sqrt(N));
+        System.out.println("The largest square has side length " + x +".");
+    }
+}
