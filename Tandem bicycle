@@ -1,0 +1,40 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        int K = Integer.parseInt(inp.readLine());
+        int N = Integer.parseInt(inp.readLine());
+        int min= 0;
+        int max = 0;
+        String[] x = inp.readLine().split(" ");
+        String[] y = inp.readLine().split(" ");
+        int[] a = new int[N];
+        int[] b = new int[N];
+        for(int i=0;i<N;i++){
+            a[i] = Integer.parseInt(x[i]);
+            b[i] = Integer.parseInt(y[i]);
+        }
+        if(K==1){
+            Arrays.sort(a);
+            Arrays.sort(b);
+            for(int i=0;i<a.length;i++){
+                    min+=Math.max(a[i],b[i]);
+                }
+            System.out.println(min);
+        } else{
+            Arrays.sort(a);
+            Arrays.sort(b);
+            int j = b.length-1;
+            for(int i=0;i<a.length;i++){
+                    max+=Math.max(a[i],b[j]);
+                    j--;
+            }
+            System.out.println(max);
+        }
+        }
+        }
