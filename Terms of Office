@@ -1,0 +1,23 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        int X = Integer.parseInt(inp.readLine());
+        int Y = Integer.parseInt(inp.readLine());
+        ArrayList<Integer> list =  new ArrayList<>();
+        int y = X;
+        for(int i=X;i<=Y;i++){
+            if((i-y)%2==0 && (i-y)%3==0 && (i-y)%4==0 && (i-y)%5==0){
+              list.add(i);
+            }
+        }
+        for(int i : list){
+            System.out.println("All positions change in year " + i);
+        }
+        }
+        }
