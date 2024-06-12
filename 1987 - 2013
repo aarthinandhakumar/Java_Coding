@@ -1,0 +1,25 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class gift1 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(reader.readLine()) + 1;
+        while (true) {
+            String[] year = Integer.toString(N).split("");
+            Set<String> s = new HashSet<>(Arrays.asList(year));
+            if (s.size() == year.length) {
+                System.out.println(N);
+                break;
+
+            }
+            N++;
+        }
+    }
+}
