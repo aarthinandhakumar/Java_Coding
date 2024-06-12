@@ -1,0 +1,18 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Main{
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(inp.readLine());
+        int k = Integer.parseInt(inp.readLine());
+        int res = 0;
+                for(int i=1;i<=k;i++){
+                    res += N*(Math.pow(10,i));
+                }
+                res = N+res;
+        System.out.println(res);
+    }
+}
