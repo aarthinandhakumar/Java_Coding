@@ -1,0 +1,35 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class RomanToInt {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+         int N = Integer.parseInt(inp.readLine());
+         int[] x = {100,500,1000,5000,10000,25000,50000,100000,500000,1000000};
+         int[] y = new int[N];
+        for(int i=0;i<N;i++) {
+            y[i] = Integer.parseInt(inp.readLine());
+        }
+        int offer = Integer.parseInt(inp.readLine());
+        int count = 0;
+            for (int i = 0; i < x.length; i++) {
+                count += x[i];
+            }
+            for(int j=0;j<y.length;j++){
+                for(int i=0;i<x.length;i++){//
+                    if(i==y[j]-1){
+                        count-=x[i];
+                    }
+                }
+            }
+        count = count/(10-N);
+            if(count>offer){
+                System.out.println("no deal");
+            } else{
+                System.out.println("deal");
+            }
+         }
+      }
