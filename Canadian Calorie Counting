@@ -1,0 +1,59 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int A = Integer.parseInt(reader.readLine());
+        int B = Integer.parseInt(reader.readLine());
+        int C = Integer.parseInt(reader.readLine());
+        int D = Integer.parseInt(reader.readLine());
+        int calorie = 0;
+        int burger = 0;
+        if(A==1){
+            burger = 461;
+        } else if(A==2){
+            burger = 431;
+        } else if(A==3){
+            burger = 420;
+        } else{
+            burger = 0;
+        }
+        calorie+=burger;
+        int side = 0;
+        if(B==1){
+            side = 100;
+        } else if(B==2){
+            side = 57;
+        } else if(B==3){
+            side = 70;
+        } else{
+            side = 0;
+        }
+        calorie+=side;
+        int drink = 0;
+        if(C==1){
+            drink = 130;
+        } else if(C==2){
+            drink = 160;
+        } else if(C==3){
+            drink = 118;
+        } else{
+            drink = 0;
+        }
+        calorie+=drink;
+        int dessert = 0;
+        if(D==1){
+            dessert = 167;
+        } else if(D==2){
+            dessert = 266;
+        } else if(D==3){
+            dessert = 75;
+        } else{
+            dessert = 0;
+        }
+        calorie+=dessert;
+        System.out.println("Your total Calorie count is " + calorie + ".");
+    }
+}
