@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        int K = Integer.parseInt(inp.readLine());
+        ArrayList<Integer> newlist = new ArrayList<Integer>();
+        for(int i=1;i<=K;i++){
+            newlist.add(i);
+        }
+        int M = Integer.parseInt(inp.readLine());
+        int[] x = new int[M];
+        for(int j=0;j<M;j++) {
+            x[j] = Integer.parseInt(inp.readLine());
+            for (int i = x[j]; i <= newlist.size(); i+=x[j]-1) {
+                   newlist.remove(i-1);
+            }
+        }
+        for( int i : newlist){
+            System.out.println(i);
+        }
+        }
+    }
