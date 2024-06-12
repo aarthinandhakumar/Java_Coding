@@ -1,0 +1,51 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        
+        int N = Integer.parseInt(inp.readLine());
+        int A = 35 - Integer.parseInt(inp.readLine());
+        int B = 100 - Integer.parseInt(inp.readLine());
+        int C = 10 - Integer.parseInt(inp.readLine());
+        int times = 0;
+
+        
+        while (N > 0) {
+            
+            N--;
+            A--;
+            times++;
+            if (A == 0) {
+                N += 30;
+                A = 35;
+            }
+
+            if (N <= 0) break;
+
+            
+            N--;
+            B--;
+            times++;
+            if (B == 0) {
+                N += 60;
+                B = 100;
+            }
+
+            if (N <= 0) break;
+
+            
+            N--;
+            C--;
+            times++;
+            if (C == 0) {
+                N += 9;
+                C = 10;
+            }
+        }
+
+        System.out.println("Martha plays " + times + " times before going broke.");
+    }
+}
