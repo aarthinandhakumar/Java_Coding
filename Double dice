@@ -1,0 +1,25 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Main{
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(inp.readLine());
+        int girl = 100;
+        int boy = 100;
+        for(int i=0;i<N;i++){
+          String[] x = inp.readLine().split(" ");
+            int X = Integer.parseInt(x[0]);
+            int Y = Integer.parseInt(x[1]);
+            if(X>Y){
+                boy-=X;
+            } if(Y>X){
+                girl-=Y;
+            }
+        }
+        System.out.println(girl);
+        System.out.println(boy);
+    }
+}
