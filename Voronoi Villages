@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(inp.readLine());
+        ArrayList<Double> list = new ArrayList<Double>();
+        ArrayList<Double> newlist = new ArrayList<Double>();
+        for(int i=0;i<N;i++){
+            list.add(Double.parseDouble(inp.readLine()));
+        }
+        Collections.sort(list);
+        for(int i=0;i< list.size()-2;i++){
+            newlist.add(list.get(i+1)/2-list.get(i)/2 + list.get(i+2)/2-list.get(i+1)/2);
+        }
+        double small = Double.POSITIVE_INFINITY;
+        for(int i=0;i< newlist.size();i++){
+            if(newlist.get(i)<small){
+                small = newlist.get(i);
+            }
+        }
+        System.out.printf("%.1f\n", small);
+    }
+}
