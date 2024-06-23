@@ -12,12 +12,11 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(reader.readLine()) + 1;
         while (true) {
-            String[] year = Integer.toString(N).split("");
+            String[] year = String.valueOf(N).split("");
             Set<String> s = new HashSet<>(Arrays.asList(year));
             if (s.size() == year.length) {
                 System.out.println(N);
                 break;
-
             }
             N++;
         }
