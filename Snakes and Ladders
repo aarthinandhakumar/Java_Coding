@@ -1,0 +1,49 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class Main1 {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        int count = 1;
+        while (count != 100) {
+            int N = Integer.parseInt(inp.readLine());
+            if (N == 0) {
+                System.out.println("You Quit!");
+                break;
+            } else {
+                count += N;
+                if(count>100){
+                    count-=N;
+                }
+                if (count == 100) {
+                    System.out.println("You are now on square " + count);
+                    System.out.println("You Win!");
+                    break;
+                } else if (count == 9) {
+                    count += 25;
+                    System.out.println("You are now on square " + count);
+                } else if (count == 40) {
+                    count += 24;
+                    System.out.println("You are now on square " + count);
+                } else if (count == 67) {
+                    count += 19;
+                    System.out.println("You are now on square " + count);
+                } else if (count == 54) {
+                    count -= 35;
+                    System.out.println("You are now on square " + count);
+                } else if (count == 90) {
+                    count -= 42;
+                    System.out.println("You are now on square " + count);
+                } else if (count == 99) {
+                    count -= 22;
+                    System.out.println("You are now on square " + count);
+                } else{
+                    System.out.println("You are now on square " + count);
+                }
+            }
+        }
+    }
+}
