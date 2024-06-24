@@ -10,15 +10,13 @@ public class Main{
         String first = "A long time ago in a galaxy ";
         String last = "far away...";
         String mid = "";
-        for(int i=1;i<N;i++){
-            if(N>1){
-                mid+="far, ";
-            }
-        }
-        if(N==1){
+         if(N==1){
             System.out.println(first+ last);
-        } else{
-            System.out.println(first+mid+last);
+        } else {
+         for(int i=1;i<N;i++){
+                mid+="far, ";
+        }
+        System.out.println(first+mid+last);
         }
     }
     }
