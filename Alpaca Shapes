@@ -1,0 +1,25 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class gift1 {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+       String[] x = inp.readLine().split(" ");
+       for(int i=0;i<x.length;i++) {
+           int X = Integer.parseInt(x[0]);
+           int Y = Integer.parseInt(x[1]);
+           int S = (int) Math.pow(X, 2);
+           int R = (int) (3.14 * Math.pow(Y,2));
+           if(S>R){
+               System.out.println("SQUARE");
+               break;
+           } else{
+               System.out.println("CIRCLE");
+               break;
+           }
+       }
+    }
+}
