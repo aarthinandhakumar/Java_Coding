@@ -1,0 +1,46 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class gift1 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        while(true){
+            String x = reader.readLine();
+            if(x.equals("TTYL")){
+                System.out.println("talk to you later");
+                break;
+            } else if(x.equals("CU")){
+                System.out.println("see you");
+            }else if(x.equals(":-)")){
+                System.out.println("I'm happy");
+            }else if(x.equals(":-(")){
+                System.out.println("I'm unhappy");
+            }else if(x.equals(";-)")){
+                System.out.println("wink");
+            }else if(x.equals(":-P")){
+                System.out.println("stick out my tongue");
+            }else if(x.equals("(~.~)")){
+                System.out.println("sleepy");
+            }else if(x.equals("TA")){
+                System.out.println("totally awesome");
+            }else if(x.equals("CCC")){
+                System.out.println("Canadian Computing Competition");
+            }else if(x.equals("CUZ")){
+                System.out.println("because");
+            }else if(x.equals("TY")){
+                System.out.println("thank-you");
+            }else if(x.equals("YW")){
+                System.out.println("you're welcome");
+            } else{
+                System.out.println(x);
+            }
+        }
+
+    }
+}
