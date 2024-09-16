@@ -1,0 +1,25 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class gift1 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String[] x = reader.readLine().split(" ");
+        int a = Integer.parseInt(x[0]); // Units of sugar KeenKen has
+        int b = Integer.parseInt(x[1]); // Units of sugar KeenKen needs
+        int c = Integer.parseInt(x[2]); // Units of toothpaste KeenKen has
+        int d = Integer.parseInt(x[3]); // Units of toothpaste KeenKen needs
+
+        // Conditions to determine KeenKen's action
+        if (a < b && c >= d) {
+            System.out.println("Go to the grocery store");
+        } else if (a >= b && c < d) {
+            System.out.println("Go to the pharmacy");
+        } else if (a < b && c < d) {
+            System.out.println("Go to the department store");
+        } else {
+            System.out.println("Stay home");
+        }
+    }
+}
