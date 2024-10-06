@@ -1,0 +1,25 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class gift1 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String x = reader.readLine();
+        String empty = "";
+        if(!(x.contains("B"))){
+            empty+="B";
+        } if(!(x.contains("F"))){
+            empty+="F";
+        } if(!(x.contains("T"))){
+            empty+="T";
+        } if(!(x.contains("L"))){
+            empty+="L";
+        } if(!(x.contains("C"))){
+            empty+="C";
+        } if(x.contains("B")&&x.contains("F")&&x.contains("T")&&x.contains("L")&&x.contains("C")){
+            empty= "NO MISSING PARTS";
+        }
+        System.out.println(empty);
+    }
+}
