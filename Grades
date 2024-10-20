@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class gift1 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(reader.readLine());
+        for(int i=0;i<N;i++){
+            int c = Integer.parseInt(reader.readLine());
+            if(c>=80 && c<=100){
+                System.out.println("A");
+            } else if(c>=70 &&c<=79){
+                System.out.println("B");
+            } else if(c>=60 && c<=69){
+                System.out.println("C");
+            } else if(c>=50 && c<=59){
+                System.out.println("D");
+            } else if(c>=0 &&c<=49){
+                System.out.println("F");
+            } else{
+                System.out.println("X");
+            }
+        }
+    }
+}
