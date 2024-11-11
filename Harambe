@@ -1,0 +1,34 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String x = reader.readLine();
+        Pattern pattern = Pattern.compile("[a-z]");
+        Pattern p = Pattern.compile("[A-Z]");
+        Matcher matcher = pattern.matcher(x);
+        Matcher mat = p.matcher(x);
+        int l = 0;
+        int u = 0;
+        while (matcher.find()) {
+            l++;
+        }
+        while (mat.find()) {
+            u++;
+        }
+if(l>u){
+    x=x.toLowerCase();
+    System.out.println(x);
+} else if(u>l){
+    x=x.toUpperCase();
+    System.out.println(x);
+} else if(u==l && u!=0){
+    System.out.println(x);
+}
+    }
+}
