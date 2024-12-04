@@ -1,0 +1,33 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(reader.readLine());
+        String[] x = new String[N];
+        String[] y = new String[N - 1];
+
+        for (int i = 0; i < N; i++) {
+            x[i] = reader.readLine();
+        }
+        for (int i = 0; i < N - 1; i++) {
+            y[i] = reader.readLine();
+        }
+        java.util.Map<String, Integer> map = new java.util.HashMap<>();
+        for (String str : x) {
+            map.put(str, map.getOrDefault(str, 0) + 1);
+        }
+        for (String str : y) {
+            map.put(str, map.get(str) - 1);
+        }
+
+        for (java.util.Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > 0) {
+                System.out.println(entry.getKey());
+                break;
+            }
+        }
+    }
+}
