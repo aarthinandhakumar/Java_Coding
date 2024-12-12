@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String[] x = reader.readLine().split(" ");
+        String[] y = reader.readLine().split(" ");
+        int[] X = new int[x.length];
+        int[] Y = new int[y.length];
+        int sum = 0;
+        int prd = 0;
+        for(int i=0;i<x.length;i++){
+            X[i] = Integer.parseInt(x[i]);
+        }
+        for(int i=0;i<y.length;i++){
+            Y[i] = Integer.parseInt(y[i]);
+            sum+=Y[i];
+            prd+=X[i]*Y[i];
+        }
+        System.out.println(sum + " " + prd);
+    }
+}
