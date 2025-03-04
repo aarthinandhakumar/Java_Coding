@@ -1,0 +1,24 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class MailCostCalculator {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(reader.readLine());
+        for (int i = 0; i < T; i++) {
+            int mass = Integer.parseInt(reader.readLine());
+            int cost;
+            if (mass <= 30) {
+                cost = 38;
+            } else if (mass <= 50) {
+                cost = 55;
+            } else if (mass <= 100) {
+                cost = 73;
+            } else {
+                cost = 73 + ((mass - 100 + 49) / 50) * 24;
+            }
+            System.out.println(cost);
+        }
+    }
+}
