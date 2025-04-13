@@ -1,0 +1,21 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String x = reader.readLine();
+        String y = reader.readLine();
+        int count = 0;
+        for(int i=0;i<y.length()-1;i++){
+            if(y.substring(i,i+1).equalsIgnoreCase(x)){
+                count++;
+            }
+        }
+        System.out.println(y);
+        System.out.println(count);
+    }
+}
