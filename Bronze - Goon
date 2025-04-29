@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main{
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        String x = inp.readLine();
+        String m = x.substring(0,3);
+        String n = x.substring(4,7);
+        String o = x.substring(8);
+
+        int sumM=0;
+        int sumN=0;
+        int sumO=0;
+        for(int i=0;i<m.length();i++){
+          sumM+=Integer.parseInt(String.valueOf(m.charAt(i)));
+        }
+        for(int i=0;i<n.length();i++){
+            sumN+=Integer.parseInt(String.valueOf(n.charAt(i)));
+        }
+        for(int i=0;i<o.length();i++){
+            sumO+=Integer.parseInt(String.valueOf(o.charAt(i)));
+        }
+        if(sumM==sumN && sumN==sumO){
+            System.out.println("Goony!");
+        } else{
+            System.out.println("Pick up the phone!");
+        }
+    }
+}
