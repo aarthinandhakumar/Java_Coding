@@ -1,0 +1,29 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        int A = Integer.parseInt(inp.readLine());
+        int B = Integer.parseInt(inp.readLine()) % 26;  
+        String C = inp.readLine();
+        StringBuilder u = new StringBuilder();
+
+        for (int i = 0; i < C.length(); i++) {
+            char currentChar = C.charAt(i);
+            if (currentChar == ' ') {
+                u.append(' ');
+            } else if (Character.isLowerCase(currentChar)) {
+                char shiftedChar = (char) ((currentChar - 'a' + B) % 26 + 'a');
+                u.append(shiftedChar);
+            } else if (Character.isUpperCase(currentChar)) {
+                char shiftedChar = (char) ((currentChar - 'A' + B) % 26 + 'A');
+                u.append(shiftedChar);
+            } else {
+                u.append(currentChar);  
+            }
+        }
+        System.out.println(u.toString());
+    }
+}
